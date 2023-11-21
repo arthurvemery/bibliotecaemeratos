@@ -8,6 +8,27 @@ def adicionar_livro(biblioteca, gastos):
     print("Livro adicionado com sucesso.")
     salvar_dados(biblioteca)
 
+def visualizar_livros(biblioteca):
+  if not biblioteca:
+      print("Nenhuma livro cadastrado.")
+      return
+  for livro in biblioteca:
+      print(f"Nome: {livro['nome']}, Autor: {livro['autor']}, Categoria: {livro['categoria']}, Preço: {livro['preco']}")
+
+def atualizar_livro(biblioteca):
+  nome = input("Nome do livro a ser atualizado: ")
+  for livro in biblioteca:
+      if livro['nome'] == nome:
+          livro['autor'] = input("Novo autor: ")
+          livro['categoria'] = input("Nova categoria: ")
+          livro['preco'] = float(input("Novo preço: "))
+          print("Livro atualizado com sucesso.")
+          salvar_dados(biblioteca)
+          return
+  print("Livro não encontrado.")
+
+
+
 def extrato_por_categoria(biblioteca):
     categorias = {}
     for livro in biblioteca:
