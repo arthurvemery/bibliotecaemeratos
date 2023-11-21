@@ -1,3 +1,17 @@
+def mostrar_menu():
+    print("\nMenu:")
+    print("1. Adicionar livro")
+    print("2. Visualizar livros")
+    print("3. Atualizar livro")
+    print("4. Excluir livro")
+    print("5. Visualizar livros por categoria")
+    print("6. Extrato da biblioteca por categoria")
+    print("7. Total gasto em livros")
+    print("8. Recomendar livro baseado em categorias populares")
+    print("9. Sair")
+    escolha = int(input("Escolha uma opção: "))
+    return escolha
+
 def adicionar_livro(biblioteca, gastos):
     nome = input("Nome do livro: ")
     autor = input("Autor: ")
