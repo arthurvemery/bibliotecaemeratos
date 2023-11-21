@@ -1,3 +1,13 @@
+def adicionar_livro(biblioteca, gastos):
+    nome = input("Nome do livro: ")
+    autor = input("Autor: ")
+    categoria = input("Categoria: ")
+    preco = float(input("Preço: "))
+    biblioteca.append({'nome': nome, 'autor': autor, 'categoria': categoria, 'preco': preco})
+    gastos[0] += preco
+    print("Livro adicionado com sucesso.")
+    salvar_dados(biblioteca)
+
 def extrato_por_categoria(biblioteca):
     categorias = {}
     for livro in biblioteca:
@@ -11,9 +21,15 @@ def extrato_por_categoria(biblioteca):
 def total_gasto(gastos):
     print(f"Total gasto em livros: R$ {gastos[0]}")
 
-
-
-
+def recomendar_livro(biblioteca):
+    if not biblioteca:
+        print("Ainda não há livros suficientes para recomendações.")
+        return
+    categorias = {}
+    for livro in biblioteca:
+        categorias[livro['categoria']] = categorias.get(livro['categoria'], 0) + 1
+    categoria_popular = max(categorias, key=categorias.get)
+    print(f"Baseado nas suas preferências, você pode gostar de mais livros na categoria '{categoria_popular}'.")
 
 def main():
     biblioteca = carregar_dados()
