@@ -1,3 +1,21 @@
+import os
+os.system("cls")
+def salvar_dados(biblioteca):
+    with open("dados.txt", "w") as file:
+        for livro in biblioteca:
+            file.write(f"{livro['nome']};{livro['autor']};{livro['categoria']};{livro['preco']}\n")
+
+def carregar_dados():
+    biblioteca = []
+    try:
+        with open("dados.txt", "r") as file:
+            for line in file:
+                nome, autor, categoria, preco = line.strip().split(";")
+                biblioteca.append({'nome': nome, 'autor': autor, 'categoria': categoria, 'preco': float(preco)})
+    except FileNotFoundError:
+        pass
+    return biblioteca
+
 def mostrar_menu():
     print("\nMenu:")
     print("1. Adicionar livro")
