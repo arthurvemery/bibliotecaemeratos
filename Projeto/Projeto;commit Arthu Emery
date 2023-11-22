@@ -59,7 +59,25 @@ def atualizar_livro(biblioteca):
           return
   print("Livro não encontrado.")
 
+def excluir_livro(biblioteca, gastos):
+    nome = input("Nome do livro a ser excluído: ")
+    for i, livro in enumerate(biblioteca):
+        if livro['nome'] == nome:
+            gastos[0] -= livro['preco']
+            del biblioteca[i]
+            print("Livro excluído com sucesso.")
+            salvar_dados(biblioteca)
+            return
+    print("Livro não encontrado.")
 
+def visualizar_por_categoria(biblioteca):
+    categoria = input("Digite a categoria: ")
+    livros_categoria = [livro for livro in biblioteca if livro['categoria'] == categoria]
+    if not livros_categoria:
+        print("Nenhum livro encontrado nessa categoria.")
+        return
+    for livro in livros_categoria:
+        print(f"Nome: {livro['nome']}, Autor: {livro['autor']}, Categoria: {livro['categoria']}, Preço: {livro['preco']}")
 
 def extrato_por_categoria(biblioteca):
     categorias = {}
