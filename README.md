@@ -12,3 +12,12 @@ COM ESSA BIBLIOTECA, PODE-SE ADICIONAR UM LIVRO E APRESENTAR AS SEGUINTES CARACT
 
 NA TELA ACIMA, O USUARIO PODE ESCOLHER DE 1 A 9, DE ACORDO COM A AÇÃO QUE QUEIRA FAZER.
 
+FLUXOGRAMA:
+
+![image](https://github.com/arthurvemery/bibliotecaemeratos/assets/151037686/da82a200-0dd9-4df0-bfc2-3518e5b4ef4e)
+
+MANUAL:
+
+file:///C:/Users/Arthur/Downloads/Untitled%2520document.pdf%20(1).pdf
+
+
